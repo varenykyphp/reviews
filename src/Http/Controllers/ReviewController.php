@@ -12,34 +12,21 @@ use VarenykyReview\Models\Review;
 
 class ReviewController extends BaseController
 {
-//     public function __construct(ReviewRepository $repository)
-//     {
-//         $this->repository = $repository;
-//     }
+    public function __construct(ReviewRepository $repository)
+    {
+        $this->repository = $repository;
+    }
 
     public function index(): View
     {
-        // $reviews = $this->repository->getAll();
+        $reviews = $this->repository->getAll();
          $reviews = ['hi'=>'ho'];
         return view('VarenykyReviews::reviews.index', compact('reviews'));
     }
 
-    public function create(): View
+    public function show(Review $review): View
     {
-        return view('VarenykyReviews::reviews.create');
-    }
-
-    public function store(Request $request): RedirectResponse
-    {
-        $create = $request->except(['_token']);
-        $review = $this->repository->create($create);
-
-        return redirect()->route('admin.reviews.index')->with('success', __('varenyky::labels.added'));
-    }
-
-    public function edit(Review $review): View
-    {
-        return view('VarenykyReviews::reviews.edit', compact('review'));
+        return view('varenykyReviews::reviews.edit', compact('review'));
     }
 
     public function update(Request $request, Review $review): RedirectResponse
