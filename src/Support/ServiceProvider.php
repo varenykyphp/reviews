@@ -19,7 +19,7 @@ class ServiceProvider extends BaseServiceProvider
     public function boot(): void
     {
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
-        $this->loadRoutesFrom(__DIR__.'/../../routes/Reviews.php');
+        $this->loadRoutesFrom(__DIR__.'/../../routes/reviews.php');
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'varenykyReviews');
         $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'varenykyReviews');
 
