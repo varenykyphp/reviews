@@ -2,7 +2,6 @@
 
 namespace VarenykyReview\Repositories;
 
-use VarenykyLocale\Models\Country;
 use Varenyky\Repositories\Repository;
 use VarenykyReview\Models\Review;
 

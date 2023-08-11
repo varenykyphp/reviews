@@ -8,18 +8,19 @@ use Illuminate\View\View;
 use Illuminate\Support\Str;
 use Varenyky\Http\Controllers\BaseController;
 use VarenykyReview\Models\Review;
-use VarenykyReview\Repositories\ReviewRepository;
+// use VarenykyReview\Repositories\ReviewRepository;
 
 class ReviewController extends BaseController
 {
-    public function __construct(ReviewRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+//     public function __construct(ReviewRepository $repository)
+//     {
+//         $this->repository = $repository;
+//     }
 
     public function index(): View
     {
-        $reviews = $this->repository->getAll();
+        // $reviews = $this->repository->getAll();
+         $reviews = ['hi'=>'ho'];
         return view('VarenykyReviews::reviews.index', compact('reviews'));
     }
 

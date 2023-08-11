@@ -14,20 +14,22 @@
             <thead>
                 <tr class="">
                     <th>{{ __('varenykyReview::labels.name') }}</th>
-                    <th>{{ __('varenykyReview::labels.slug') }}</th>
+                    <th>{{ __('varenykyReview::labels.rating') }}</th>
+                    <th>{{ __('varenykyReview::labels.description') }}</th>
                     <th width="350"></th>
                 </tr>
             </thead>
             <tbody>
-                @forelse ($menus as $menu)
+                @forelse ($reviews as $review)
                     <tr>
-                        <td>{{ $menu->name }}</td>
-                        <td>{{ $menu->slug }}</td>
+                        <td>{{ $review->order->delevery->name }}</td>
+                        <td>{{ $review->rating }}</td>
+                        <td>{{ $review->description }}</td>
                         <td align="right">
-                            <a href="{{ route('admin.items.index', $menu->id) }}" class="btn btn-sm btn-dark me-1">
-                                <i class="fa-solid fa-bars"></i> {{ __('varenyky::labels.items') }}
+                            <a href="{{ route('admin.reviews.show', $review->id) }}" class="btn btn-sm btn-dark me-1">
+                                <i class="fa-solid fa-bars"></i> {{ __('varenyky::labels.show') }}
                             </a>
-                            @include('varenykyAdmin::actions', ['route' => 'admin.menus', 'entity' => $menu])
+                            
                         </td>
                     </tr>
                 @empty
