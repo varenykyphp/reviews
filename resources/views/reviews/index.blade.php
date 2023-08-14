@@ -22,7 +22,7 @@
             <tbody>
                 @forelse ($reviews as $review)
                     <tr>
-                        <td>{{ $review->order->delevery->name }}</td>
+                        <td>{{ $review->order->delivery->name }}</td>
                         <td>{{ $review->rating }}</td>
                         <td>{{ $review->description }}</td>
                         <td align="right">
