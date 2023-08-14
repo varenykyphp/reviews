@@ -19,13 +19,13 @@
             "src/helpers.php"
         ],
         "psr-4": {
-            "VarenykyReviews\\": "/src"
+            "VarenykyReview\\": "/src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "VarenykyReviews\\Support\\ServiceProvider"
+                "VarenykyReview\\Support\\ServiceProvider"
             ]
         }
     },

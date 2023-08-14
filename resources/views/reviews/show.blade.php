@@ -29,7 +29,7 @@
                             <form action="{{ route( "admin.reviews.destroy", $review) }}" method="POST" style="display:inline">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt me-2"></i>{{ __('lvarenyky::labels.delete') }}</button>
+                                <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt me-2"></i>{{ __('varenyky::labels.delete') }}</button>
                         </form>
                         </td>
                     </tr>

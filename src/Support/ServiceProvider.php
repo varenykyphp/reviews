@@ -1,6 +1,6 @@
 <?php
 
-namespace VarenykyReviews\Support;
+namespace VarenykyReview\Support;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
@@ -20,8 +20,8 @@ class ServiceProvider extends BaseServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/../../routes/reviews.php');
-        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'varenykyReviews');
-        $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'varenykyReviews');
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'VarenykyReview');
+        $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'VarenykyReview');
 
         $this->publishes([
             __DIR__.'/../../config/reviews.php' => config_path('reviews.php'),

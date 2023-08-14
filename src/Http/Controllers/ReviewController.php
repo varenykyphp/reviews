@@ -1,6 +1,6 @@
 <?php
 
-namespace VarenykyReviews\Http\Controllers;
+namespace VarenykyReview\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -8,7 +8,7 @@ use Illuminate\View\View;
 use Illuminate\Support\Str;
 use Varenyky\Http\Controllers\BaseController;
 use VarenykyReview\Models\Review;
-// use VarenykyReview\Repositories\ReviewRepository;
+use VarenykyReview\Repositories\ReviewRepository;
 
 class ReviewController extends BaseController
 {
@@ -21,12 +21,12 @@ class ReviewController extends BaseController
     {
         $reviews = $this->repository->getAll();
          $reviews = ['hi'=>'ho'];
-        return view('VarenykyReviews::reviews.index', compact('reviews'));
+        return view('VarenykyReview::reviews.index', compact('reviews'));
     }
 
     public function show(Review $review): View
     {
-        return view('varenykyReviews::reviews.edit', compact('review'));
+        return view('VarenykyReview::reviews.edit', compact('review'));
     }
 
     public function update(Request $request, Review $review): RedirectResponse
